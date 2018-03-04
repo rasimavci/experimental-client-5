@@ -1,0 +1,402 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+html, body{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+#app{
+  margin: 0 auto;
+  height: 100vh;
+}
+h1{
+  padding: 0;
+  margin: 0;
+}
+.router-link-active{
+  color: #767676;
+}
+#toolbar a{
+  color: #767676;
+}
+#toolbar {
+  float: left;
+  width: 80px;
+  background-color: #30414D;
+  color: #767676;
+  padding: 35px 25px 25px 25px;
+}
+
+#loginScreen {
+  background-repeat:false;  
+  z-index: 100;
+  float: left;
+  width: 300px;
+  height: 100%;
+  background-color: #30414D;
+  color: #767676;
+  padding: 35px 25px 25px 25px;
+}
+
+
+#toolbar2 {
+  float: none;
+  width: 80px;
+  height: 100%;
+  background-color: #92a8d1;
+  color: #767676;
+  padding: 35px 25px 25px 25px;
+}
+
+#notes-list {
+  float: left;
+  width: 4300px;
+  height: 100%;
+  background-color: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+#contact-list {
+  z-index: -1;
+  float: left;
+  width: 400px;
+  height: 100%;
+  background-color: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+#message-list {
+  float: left;
+  width: 400px;
+  height: 100%;
+  background-color: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+#history-list {
+  float: left;
+  width: 400px;
+  height: 100%;
+  background-color: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+#dialpad {
+  float: left;
+  width: 400px;
+  height: 100%;
+  background-color: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+#list-header {
+  padding: 5px 25px 25px 25px;
+}
+
+#list-header h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 8px;
+}
+
+#notes-list .container {
+  height: calc(100% - 137px);
+	max-height: calc(100% - 137px);
+	overflow: auto;
+  width: 100%;
+  padding: 0;
+}
+
+#notes-list .container .list-group-item {
+  border: 0;
+  border-radius: 0;
+}
+
+#contact-list .container {
+  height: calc(100% - 137px);
+	max-height: calc(100% - 137px);
+	overflow: auto;
+  width: 100%;
+  padding: 0;
+}
+
+#contact-list .container .list-group-item {
+  border: 0;
+  border-radius: 0;
+}
+
+.list-group-item-heading {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+#note-editor {
+  height: 100%;
+  margin-left: 380px;
+}
+
+#note-editor textarea {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+#toolbar i {
+  font-size: 30px;
+  margin-bottom: 35px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+#toolbar2 i {
+  font-size: 30px;
+  margin-bottom: 35px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+#toolbar i:hover {
+  opacity: 1;
+}
+
+.starred {
+  color: #F7AE4F;
+}
+
+#login-input {
+  float: right;  
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+}
+
+.dial-pad-wrap .left-pan .people .phone .highlight{
+	color:#75c4b5;
+}
+.dial-pad-wrap .left-pan .people .full-name .highlight{
+	color:#75c4b5;
+}
+.dial-pad-wrap{
+	width:590px;
+	height:500px;
+	overflow:hidden;
+	position:relative;
+	margin:50px auto 0;
+	background:#ecf0f1;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.dial-pad-wrap .left-pan,
+.dial-pad-wrap .dial-pad{
+	padding:15px;
+}
+.dial-pad-wrap .left-pan{
+	top:0;
+	left:0;
+	bottom:0;
+	z-index:1;
+	width:255px;
+	position:absolute;
+	background:#30414D;
+	transition:width .4s ease-in-out 0s;
+}
+.dial-pad-wrap .left-pan.active{
+	width:100%;
+}
+.dial-pad-wrap .left-pan .people .photo,
+.dial-pad-wrap .left-pan .calling .photo{
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiBoZWlnaHQ9IjUwcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MCA1MCIgd2lkdGg9IjUwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iNTAiIHdpZHRoPSI1MCIvPjxwYXRoIGQ9Ik0zMC45MzMsMzIuNTI4Yy0wLjE0Ni0xLjYxMi0wLjA5LTIuNzM3LTAuMDktNC4yMWMwLjczLTAuMzgzLDIuMDM4LTIuODI1LDIuMjU5LTQuODg4YzAuNTc0LTAuMDQ3LDEuNDc5LTAuNjA3LDEuNzQ0LTIuODE4ICBjMC4xNDMtMS4xODctMC40MjUtMS44NTUtMC43NzEtMi4wNjVjMC45MzQtMi44MDksMi44NzQtMTEuNDk5LTMuNTg4LTEyLjM5N2MtMC42NjUtMS4xNjgtMi4zNjgtMS43NTktNC41ODEtMS43NTkgIGMtOC44NTQsMC4xNjMtOS45MjIsNi42ODYtNy45ODEsMTQuMTU2Yy0wLjM0NSwwLjIxLTAuOTEzLDAuODc4LTAuNzcxLDIuMDY1YzAuMjY2LDIuMjExLDEuMTcsMi43NzEsMS43NDQsMi44MTggIGMwLjIyLDIuMDYyLDEuNTgsNC41MDUsMi4zMTIsNC44ODhjMCwxLjQ3MywwLjA1NSwyLjU5OC0wLjA5MSw0LjIxQzE5LjM2NywzNy4yMzgsNy41NDYsMzUuOTE2LDcsNDVoMzggIEM0NC40NTUsMzUuOTE2LDMyLjY4NSwzNy4yMzgsMzAuOTMzLDMyLjUyOHoiLz48L3N2Zz4=) no-repeat center;
+}
+.dial-pad-wrap .left-pan .contacts .title{
+	color:#eee;
+	font-size:24px;
+	font-weight:400;
+	margin-top:15px;
+	text-align:center;
+	margin-bottom:15px;
+	padding-bottom:10px;
+	text-transform:uppercase;
+	border-bottom:2px solid #eee;
+}
+.dial-pad-wrap .left-pan .people{
+	padding:10px;
+	display:none;
+	cursor:default;
+	background:#eee;
+	margin-bottom:15px;
+	box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 5px 8px 0 rgba(0,0,0,.19);
+}
+.dial-pad-wrap .left-pan .people .photo{
+	width:50px;
+	height:50px;
+	overflow:hidden;
+	border-radius:50%;
+	margin-right:10px;
+	border:2px solid #16a085;
+}
+.dial-pad-wrap .left-pan .people .photo img{
+	width:100%;
+	display:block;
+}
+.dial-pad-wrap .left-pan .people .info .name{
+	margin-bottom:10px;
+}
+.dial-pad-wrap .left-pan .people .info .phone{
+	font-size:14px;
+	font-weight:500;
+}
+
+.dial-pad-wrap .left-pan .calling{
+	color:#eee;
+	margin:auto;
+	display:none;
+	max-width:300px;
+	text-align:center;
+}
+.dial-pad-wrap .left-pan .calling .title{
+	font-size:28px;
+	margin:20px 0;
+}
+.dial-pad-wrap .left-pan .calling .name,
+.dial-pad-wrap .left-pan .calling .photo,
+.dial-pad-wrap .left-pan .calling .action,
+.dial-pad-wrap .left-pan .calling .number{
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:15px;
+}
+.dial-pad-wrap .left-pan .calling .photo{
+	width:100px;
+	height:100px;
+	overflow:hidden;
+	border:2px solid;
+	border-radius:50%;
+	box-shadow:0 8px 10px 0 rgba(0,0,0,.24),0 10px 50px 0 rgba(0,0,0,.19);
+}
+.dial-pad-wrap .left-pan .calling .photo img{
+	width:100%;
+	display:block;
+}
+.dial-pad-wrap .left-pan .calling .name{
+	margin:30px 0;
+	font-size:24px;
+	font-weight:400;
+}
+.dial-pad-wrap .left-pan .calling .action{
+	width:100%;
+	display:table;
+}
+.dial-pad-wrap .left-pan .calling .action .lnk{
+	width:25%;
+	display:table-cell;
+}
+#ModalNewCall .dial-pad-wrap .left-pan .calling .btn{
+	width:40px;
+	height:40px;
+	border:none;
+	font-size:16px;
+	border-radius:50%;
+  animation-duration:1s;
+  min-width: 0px;
+}
+.dial-pad-wrap .left-pan .calling .action .btn.active{
+	color:#eee;
+	background:#27ae60;
+}
+.dial-pad-wrap .left-pan .calling .call-end{
+	margin-top:30px;
+}
+.dial-pad-wrap .left-pan .calling .call-end .btn{
+	width:200px;
+	color:#eee;
+	font-size:24px;
+	border-radius:25px;
+	background:#c0392b;
+}
+.dial-pad-wrap .left-pan .calling .action .btn .fa-mic:before{
+	content:'\f131';
+}
+.dial-pad-wrap .left-pan .calling .action .btn.active .fa-mic:before{
+	content:'\f130';
+}
+.dial-pad-wrap .left-pan .calling .action .btn .fa-vol:before{
+	content:'\f027';
+}
+.dial-pad-wrap .left-pan .calling .action .btn.active .fa-vol:before{
+	content:'\f028';
+}
+
+.dial-pad-wrap .dial-pad{
+	height:100%;
+	padding:40px;
+	margin-left:255px;
+}
+.dial-pad-wrap .dial-screen{
+	height:50px;
+	padding:0 15px;
+	font-size:28px;
+	font-weight:400;
+	line-height:50px;
+	text-align:right;
+	margin-bottom:20px;
+	background:#eef1f2;
+	border:1px solid #e9eeef;
+}
+.dial-pad-wrap .dial-table{
+	width:100%;
+	display:table;
+}
+.dial-pad-wrap .dial-table .dial-table-row{
+	display:table-row;
+}
+.dial-pad-wrap .dial-table .dial-table-col{
+	cursor:default;
+	width:33.333333%;
+	text-align:center;
+	display:table-cell;
+	vertical-align:top;
+}
+.dial-pad-wrap .dial-table .dial-key-wrap{
+	margin-bottom:20px;
+	transition:background .3s ease-in-out 0s;
+}
+.dial-pad-wrap .dial-table .dial-table-col .dial-key{
+	font-size:28px;
+	font-weight:400;
+	min-height:30px;
+	line-height:30px;
+}
+.dial-pad-wrap .dial-table .no-sub-key .dial-key{
+	min-height:48px;
+	line-height:48px;
+}
+.dial-pad-wrap .dial-table .dial-sub-key{
+	color:#aaa;
+	font-size:14px;
+	text-transform:uppercase;
+}
+.dial-pad-wrap .no-sub-key .dial-sub-key{
+	display:none;
+}
+.dial-pad-wrap .dial-table .dial-key-wrap.active,
+.dial-pad-wrap .dial-table .dial-key-wrap:hover{
+	color:#eee;
+	background:#16a085;
+}
+.dial-pad-wrap .dial-table .dial-key-wrap.active .dial-sub-key,
+.dial-pad-wrap .dial-table .dial-key-wrap:hover .dial-sub-key{
+	color:#eee;
+}
